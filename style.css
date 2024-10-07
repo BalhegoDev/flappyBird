@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game{
+    width: 60%;
+    height: 80%;
+    border: thin solid black;
+    position: relative;
+    background-color: #7CB9E8;
+    overflow: hidden;
+}
+
+.game .clouds{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 25rem;
+    position: absolute;
+    animation-name: cloudMoving;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-direction:normal;
+    animation-fill-mode: forwards;
+    animation-timing-function:linear;
+    z-index:1;
+}
+
+.game .clouds img{
+    width: 10rem;
+    height: 10rem;
+}
+
+.game #bird{
+    position: absolute;
+    bottom: 40%;
+}
+
+.top_tunnel,.bottom_tunnel{
+    width: 14rem;
+    position: absolute;
+    z-index: 2;
+    left: 40%;
+}
+
+.top_tunnel{
+    transform: rotate(180deg);
+}
+
+.bottom_tunnel{
+    bottom: 0;
+    height: 20rem;
+}
+
+.falling-bird{
+    transform: rotate(80deg);
+}
+
+.flyng-bird{
+    transform: rotate(-45deg);
+}
+
+
+
+@keyframes cloudMoving{
+    from{
+        right: -100%;
+    }
+    to{
+        right: 120%;
+    }
+}
