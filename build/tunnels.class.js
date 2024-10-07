@@ -1,5 +1,4 @@
-"use strict";
-class Tunnels {
+export default class Tunnels {
     calculateY(top_tunnel, bottom_tunnel) {
         //The height is given by percent !!
         //I set total as 90% cuz i wanna a little space of 10%.

@@ -43,14 +43,28 @@ body{
 
 .game #bird{
     position: absolute;
-    bottom: 40%;
+    bottom: 300px;
+    animation-name: movingBird;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-duration: .8s;
 }
 
 .top_tunnel,.bottom_tunnel{
-    width: 14rem;
+    width: 8rem;
     position: absolute;
     z-index: 2;
-    left: 40%;
+}
+
+.first_top_tunnel,.first_bottom_tunel{
+    animation-name: movingFirstTunnels;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
 }
 
 .top_tunnel{
@@ -62,15 +76,13 @@ body{
     height: 20rem;
 }
 
-.falling-bird{
-    transform: rotate(80deg);
+@keyframes movingBird {
+    from{
+        transform: rotate(60deg);
+    }to{
+        transform: rotate(-60deg);
+    }
 }
-
-.flyng-bird{
-    transform: rotate(-45deg);
-}
-
-
 
 @keyframes cloudMoving{
     from{
@@ -78,5 +90,15 @@ body{
     }
     to{
         right: 120%;
+    }
+}
+
+@keyframes movingFirstTunnels{
+    from{
+        right: -1%;
+    }
+
+    to{
+        right: 100%
     }
 }

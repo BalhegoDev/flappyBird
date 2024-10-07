@@ -1,11 +1,10 @@
-"use strict";
-class Bird {
+export default class Bird {
     fly(bird, currentHeight) {
-        currentHeight += 7;
-        bird.style.bottom = `${currentHeight}%`;
+        const numberHeight = Number(currentHeight.replace("px", ""));
+        bird.style.bottom = `${numberHeight + 70}px`;
     }
     fall(bird, currentHeight) {
-        currentHeight -= 5;
-        bird.style.bottom = `${currentHeight}%`;
+        const numberHeight = Number(currentHeight.replace("px", ""));
+        bird.style.bottom = `${numberHeight - 3}px`;
     }
 }
